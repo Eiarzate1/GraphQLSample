@@ -17,6 +17,13 @@ namespace GraphQLSample.DataAccess.Repositories
             _dbContext = dbContext;
         }
 
+        public User Add(User user)
+        {
+            _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
+            return user;
+        }
+
         public IEnumerable<User> GetAll()
         {
             return _dbContext.Users;

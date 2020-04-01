@@ -1,4 +1,5 @@
 ﻿using GraphQL;
+using GraphQLSample.Mutations;
 using GraphQLSample.Queries;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace GraphQLSample.Schema
         public GraphQLSampleSchema(IDependencyResolver resolver): base(resolver)
         {
             Query = resolver.Resolve<UserQuery>();
+            Mutation = resolver.Resolve<UserMutation>();
         }
     }
 }
